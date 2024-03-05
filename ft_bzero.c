@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 10:33:45 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/05 10:56:07 by klamprak         ###   ########.fr       */
+/*   Created: 2024/03/05 10:55:53 by klamprak          #+#    #+#             */
+/*   Updated: 2024/03/05 11:10:38 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*result;
-
-	i = 0;
-	result = (unsigned char *)b;
-	while (i < len)
-	{
-		result[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	if (n != 0)
+		ft_memset(s, 0, n);
 }
 
 // #include <stdio.h>
@@ -32,10 +23,19 @@ void	*ft_memset(void *b, int c, size_t len)
 // int	main(void)
 // {
 // 	char	str[50];
+// 	int		i;
+
 // 	strcpy(str, "This is string.h library function");
 // 	puts(str);
-// 	memset(str, '$', 7);
-// 	puts(str);
-// 	ft_memset(str, '1', 8);
-// 	puts(str);
+// 	i = 0;
+// 	bzero(str, 7);
+// 	while(str[i] == '\0' && str[i + 1] == '\0')
+// 		i++;
+// 	printf("zeros from bzero: %d\n", i);
+// 	strcpy(str, "This is string.h library function");
+// 	i = 0;
+// 	ft_bzero(str, 7);
+// 	while(str[i] == '\0' && str[i + 1] == '\0')
+// 		i++;
+// 	printf("zeros from bzero: %d\n", i);
 // }
