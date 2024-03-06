@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 11:28:25 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 12:44:22 by klamprak         ###   ########.fr       */
+/*   Created: 2024/03/06 12:32:45 by klamprak          #+#    #+#             */
+/*   Updated: 2024/03/06 12:44:10 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
+	const unsigned char *temp = (unsigned char *) s;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
 	{
-		if (s[i] == ((char) c))
-			return ((char *)(&s[i]));
+		if (temp[i] == ((unsigned char) c))
+			return ((void *)(&s[i]));
 		i++;
 	}
-	if (((char) c) == s[i])
-		return ((char *)(&s[i]));
 	return (NULL);
 }
 
@@ -32,8 +31,8 @@ char	*ft_strchr(const char *s, int c)
 // #include <string.h>
 // int main() {
 // 	const char *str = "Hello, World!";
-// 	char sch = 'a';
-// 	char *result = ft_strchr(str, sch);
+// 	char sch = '\0';
+// 	char *result = ft_memchr(str, sch, 25);
 // 	if (result)
 // 		printf("Character '%c' found at position %ld\n", sch, result - str);
 // 	else
