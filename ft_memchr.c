@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 12:32:45 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 12:44:10 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:09:02 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	const unsigned char *temp = (unsigned char *) s;
+	size_t				i;
+	const unsigned char	*temp;
 
+	temp = (unsigned char *) s;
 	i = 0;
 	while (i < n)
 	{
