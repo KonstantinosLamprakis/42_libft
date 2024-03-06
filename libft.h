@@ -6,18 +6,21 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 09:50:57 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 17:02:11 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:07:12 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-	<stddef.h>: size_t, NULL
+	#include <stddef.h>: size_t, NULL
+	#include <stdlib.h>: malloc
  */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stddef.h>
+# include <errno.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
