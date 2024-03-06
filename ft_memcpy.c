@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:19:20 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/05 11:34:18 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:49:05 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*result;
-	unsigned char	*source;
+	size_t				i;
+	unsigned char		*result;
+	const unsigned char	*source;
 
 	i = 0;
 	result = (unsigned char *)dst;
