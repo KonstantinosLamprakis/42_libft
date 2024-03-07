@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:41:33 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 07:13:03 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:14:13 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*result;
 
-	if (start >= ft_strlen(s) || len < 0)
-		return (NULL);
+	if (start > ft_strlen(s) || len < 0)
+	{
+		result = malloc(1 * sizeof(char));
+		if (!result)
+			return (NULL);
+		result[0] = '\0';
+		return (result);
+	}
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
