@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 09:10:42 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 09:47:13 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:38:58 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ char	*ft_itoa(int n)
 	result = malloc(12 * sizeof(char));
 	if (!result)
 		return (NULL);
+	i = 0;
 	if (n == -2147483648)
 	{
-		result = "-2147483648";
-		return (result);
+		result[0] = '-';
+		result[1] = '2';
+		i += 2;
+		n = 147483648;
 	}
-	i = 0;
 	if (n < 0)
 	{
 		result[i++] = '-';
