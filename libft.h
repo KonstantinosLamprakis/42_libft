@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 09:50:57 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 14:32:34 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:39:42 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <string.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 // libc functions
 int		ft_isalpha(int c);
@@ -63,4 +69,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// Bonus functions
+t_list	*ft_lstnew(void *content);
 #endif
