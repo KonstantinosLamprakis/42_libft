@@ -6,9 +6,11 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:29:26 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 10:30:38 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 10:35:23 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
