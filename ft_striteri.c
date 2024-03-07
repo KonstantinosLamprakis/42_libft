@@ -6,13 +6,13 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:23:46 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 10:37:06 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:12:31 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int		i;
+	int	i;
 
 	if (!s || !f)
 		return ;
