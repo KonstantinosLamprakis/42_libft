@@ -6,13 +6,14 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 09:50:57 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 10:24:01 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 10:27:40 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 	#include <stddef.h>: size_t, NULL
 	#include <stdlib.h>: malloc
+	#include <unistd.h>: write
  */
 
 #ifndef LIBFT_H
@@ -22,6 +23,7 @@
 # include <stddef.h>
 # include <errno.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 // libc functions
 int		ft_isalpha(int c);
@@ -56,4 +58,5 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
 #endif
