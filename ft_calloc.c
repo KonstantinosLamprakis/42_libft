@@ -6,13 +6,13 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:11:28 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 17:36:43 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 11:53:25 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*result;
 
