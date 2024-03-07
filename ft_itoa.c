@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 09:10:42 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 09:46:43 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 09:47:13 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static void	positive_itoa(int n, char *result, int i)
 	}
 	result[i++] = '\0';
 }
+
 // #include <stdio.h>
 // int	main(void)
 // {
