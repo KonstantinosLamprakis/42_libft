@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:29:26 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 10:35:23 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:12:59 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], sizeof(char));
+		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:31:35 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 10:35:58 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:13:47 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_putendl_fd(char *s, int fd)
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], sizeof(char));
+		i++;
 	}
 	write(fd, "\n", sizeof(char));
 }
