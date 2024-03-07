@@ -6,11 +6,13 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 09:50:57 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 17:39:28 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 09:08:10 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+	TODO:
+		- free memory if malloc fails, before I return NULL
 	#include <stddef.h>: size_t, NULL
 	#include <stdlib.h>: malloc
  */
@@ -18,10 +20,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// libraries
 # include <stddef.h>
 # include <errno.h>
 # include <stdlib.h>
 
+// libc functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -45,4 +49,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*calloc(size_t count, size_t size);
 char	*ft_strdup(const char	*s1);
+
+// Additional functions
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 #endif
