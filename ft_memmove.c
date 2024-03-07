@@ -6,30 +6,12 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:39:31 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 10:08:28 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:51:44 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t				i;
-	unsigned char		*result;
-	const unsigned char	*source;
-
-	i = 0;
-	result = (unsigned char *)dst + len - 1;
-	source = (unsigned char *)src + len - 1;
-	i++;
-	while (i <= len)
-	{
-		*result-- = *source--;
-		i++;
-	}
-	return (dst);
-}
-// Second Way
 // void	*ft_memmove(void *dst, const void *src, size_t len)
 // {
 // 	size_t				i;
@@ -37,27 +19,44 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	const unsigned char	*source;
 
 // 	i = 0;
-// 	result = (unsigned char *)dst;
-// 	source = (unsigned char *)src;
-// 	if (source < result)
+// 	result = (unsigned char *)dst + len - 1;
+// 	source = (unsigned char *)src + len - 1;
+// 	i++;
+// 	while (i <= len)
 // 	{
+// 		*result-- = *source--;
 // 		i++;
-// 		while (i <= len)
-// 		{
-// 			result[len - i] = source[len - i];
-// 			i++;
-// 		}
-// 	}
-// 	else
-// 	{
-// 		while (i < len)
-// 		{
-// 			result[i] = source[i];
-// 			i++;
-// 		}
 // 	}
 // 	return (dst);
 // }
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t				i;
+	unsigned char		*result;
+	const unsigned char	*source;
+
+	if (!dst && !src)
+		return (dst);
+	i = 0;
+	result = (unsigned char *)dst;
+	source = (unsigned char *)src;
+	if (source < result)
+	{
+		i++;
+		while (i <= len)
+		{
+			result[len - i] = source[len - i];
+			i++;
+		}
+	}
+	else
+	{
+		while (i++ < len)
+			result[i - 1] = source[i - 1];
+	}
+	return (dst);
+}
 
 // #include <stdio.h>
 // #include <string.h>
