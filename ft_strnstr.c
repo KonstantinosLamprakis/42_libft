@@ -6,51 +6,31 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:10:07 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 14:23:44 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:55:57 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	res(const char *haystack, const char *needle, int *res, size_t len);
-
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	result;
+	size_t	i;
+	size_t	j;
 
 	if (needle[0] == '\0')
-		return ((char *) haystack);
-	res(haystack, needle, &result, len);
-	if (result != -1)
-		return ((char *)(haystack + result));
-	return ((void *)0);
-}
-
-static void	res(const char *haystack, const char *needle, int *res, size_t len)
-{
-	size_t	i;
-	int		j;
-
+		return ((char *)haystack);
 	i = 0;
-	j = 0;
-	*res = -1;
-	while (haystack[i] != '\0' && needle[j] != '\0' && i < len)
+	while (haystack[i] != '\0')
 	{
-		if (haystack[i] == needle[j])
-		{
-			if (*res == -1)
-				*res = i;
+		j = 0;
+		while (i + j < len && haystack[i + j] == needle[j]
+			&& haystack[i + j] != '\0' && needle[j] != '\0')
 			j++;
-		}
-		else
-		{
-			*res = -1;
-			j = 0;
-		}
+		if (needle[j] == '\0')
+			return ((char *)(haystack + i));
 		i++;
 	}
-	if (needle[j] != '\0')
-		*res = -1;
+	return (NULL);
 }
 
 // #include <stdio.h>
