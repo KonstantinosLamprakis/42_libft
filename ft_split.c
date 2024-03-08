@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:14:19 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/07 09:07:50 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:11:38 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**ft_split(char const *s, char c)
 	int		k;
 	int		i;
 
-	result = malloc((count_seps(s, c) + 2) * sizeof(char *));
+	result = malloc((count_seps(s, c) + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	k = get_result(s, c, result);
@@ -81,9 +81,13 @@ static int	count_seps(char const *str, char sep)
 
 	i = 0;
 	sep_c = 0;
+	while (str[i] != '\0' && str[i] == sep)
+		i++;
+	if (str[i] != '\0')
+		sep_c++;
 	while (str[i] != '\0')
 	{
-		if (str[i] == sep && !(str[i + 1] == sep))
+		if (str[i] == sep && str[i + 1] != sep && str[i + 1] != '\0')
 			sep_c++;
 		i++;
 	}
