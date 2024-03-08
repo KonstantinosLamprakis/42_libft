@@ -6,11 +6,13 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:41:33 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/08 15:31:01 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:03:50 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*get_empty(void);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -20,14 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if ((int) len < 0)
 		len = ft_strlen(s);
 	if (start > ft_strlen(s) || len < 0)
-	{
-		result = malloc(1 * sizeof(char));
-		if (!result)
-			return (NULL);
-		result[0] = '\0';
-		return (result);
-	}
-	result = malloc((len + 1) * sizeof(char));
+		return (get_empty());
+	if (ft_strlen(s) - start < len)
+		result = malloc((ft_strlen(s) - start + 1) * sizeof(char));
+	else
+		result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -37,6 +36,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	result[i] = '\0';
+	return (result);
+}
+
+static char	*get_empty(void)
+{
+	char	*result;
+
+	result = malloc(1 * sizeof(char));
+	if (!result)
+		return (NULL);
+	result[0] = '\0';
 	return (result);
 }
 
