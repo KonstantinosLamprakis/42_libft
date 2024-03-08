@@ -6,7 +6,7 @@
 /*   By: klamprak <klamprak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:53:42 by klamprak          #+#    #+#             */
-/*   Updated: 2024/03/06 17:03:50 by klamprak         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:11:03 by klamprak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,16 @@ static int	get_int(const char *str, int i, int sign)
 	result = 0;
 	end = i;
 	while (str[end] != '\0' && str[end] >= '0' && str[end] <= '9')
-	{
 		end++;
-	}
 	div = 1;
-	while (str[end -1] >= '0' && str[end - 1] <= '9')
+	if (end == 0)
+		return (0);
+	while (str[end - 1] >= '0' && str[end - 1] <= '9')
 	{
 		result = result - ((str[end - 1] - '0') * div);
 		div *= 10;
+		if (end == 1)
+			break ;
 		end--;
 	}
 	return (result * sign * -1);
@@ -65,8 +67,8 @@ static int	get_int(const char *str, int i, int sign)
 // int	main(void)
 // {
 // 	int		val;
-// 	char	str[40] = "   	\n\f --2147483648as  ";
+// 	char	*str = "";
 // 	// val = ft_atoi(str);
-// 	val = atoi(str);
-// 	printf("String value = %s, Int value = %d\n", str, val);
+// 	val = ft_atoi(str);
+// 	printf("\n->String value = %s, Int value = %d\n", str, val);
 // }
